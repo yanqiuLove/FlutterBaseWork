@@ -1,6 +1,10 @@
+// scoped_model 练习使用
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_base_work/scoped_model/count_model.dart';
 import 'package:scoped_model/scoped_model.dart';
+
 
 void main() => runApp(MyApp());
 
