@@ -12,3 +12,11 @@
 /// SizedBox(width: 15, child: Container(color: Colors.transparent,),),
 /// 2.设置 GestureDetector 的 behavior 属性（推荐方式）
 /// behavior 默认值为 HitTestBehavior.deferToChild，我们这里将其设置为 HitTestBehavior.translucent。
+///
+///
+/// ?. 表达式的含义  ?? 表达式的含义
+/// bool testBool = testa() ?. testb() ?? false
+/// ?. 在左边为null的时候阻断右边的调用 ?? 运算符主要作用是在左侧表达式为null的时候为其设置一个默认值
+///
+///
+///
