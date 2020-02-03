@@ -52,14 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Switch(value: true, onChanged: (value){
-              
-            })
-          ],
-        ),
+        child: Center(
+          child: CircularProgressIndicator(),
+        )
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
