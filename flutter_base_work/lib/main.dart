@@ -1,10 +1,8 @@
 // scoped_model 练习使用
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_base_work/scoped_model/count_model.dart';
 import 'package:scoped_model/scoped_model.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -19,11 +17,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primaryColor: Colors.yellow,
-          primarySwatch: Colors.blue,
-          brightness: Brightness.light,
-          accentColor: Colors.cyan
-        ),
+            primaryColor: Colors.yellow,
+            primarySwatch: Colors.blue,
+            brightness: Brightness.light,
+            accentColor: Colors.cyan),
         home: MyHomePage(title: '首页'),
         routes: {
           "home": (context) => MyHomePage(),
@@ -34,7 +31,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
@@ -44,7 +40,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,17 +47,26 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: CircularProgressIndicator(),
-        )
-      ),
+          child: Column(
+            children: <Widget>[
+              Icon(IconData(0xe658, fontFamily: 'iconfont')),
+              Icon(IconData(0xe657, fontFamily: 'iconfont')),
+              Icon(IconData(0xe63f, fontFamily: 'iconfont')),
+              Icon(IconData(0xe63e, fontFamily: 'iconfont')),
+              Icon(IconData(0xe63c, fontFamily: 'iconfont')),
+              Icon(IconData(0xe635, fontFamily: 'iconfont')),
+              Icon(IconData(0xe633, fontFamily: 'iconfont'),color: Colors.red,),
+            ],
+          )),
+
+//        Center(
+////          child: CircularProgressIndicator(),
+//          child: Icon(IconData(0xe658, fontFamily: 'iconfont')),
+//        )
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-
-
-
 
 //class MyHomePage extends StatefulWidget {
 //  MyHomePage({Key key, this.title}) : super(key: key);
@@ -117,7 +121,6 @@ class MySecondPage extends StatefulWidget {
 }
 
 class _MySecondPageState extends State<MySecondPage> {
-
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant<CountModel>(builder: (context, child, model) {
@@ -137,7 +140,7 @@ class _MySecondPageState extends State<MySecondPage> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: (){
+          onPressed: () {
             model.increment();
           },
           tooltip: 'Increment',
