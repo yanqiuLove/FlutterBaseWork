@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_base_work/scoped_model/count_model.dart';
+import 'package:flutter_base_work/widgets/custom_painter_widget.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 void main() => runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-            primaryColor: Colors.yellow,
+            primaryColor: Colors.cyan,
             primarySwatch: Colors.blue,
             brightness: Brightness.light,
             accentColor: Colors.cyan),
@@ -43,28 +44,76 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Icon(IconData(0xe658, fontFamily: 'iconfont')),
-              Icon(IconData(0xe657, fontFamily: 'iconfont')),
-              Icon(IconData(0xe63f, fontFamily: 'iconfont')),
-              Icon(IconData(0xe63e, fontFamily: 'iconfont')),
-              Icon(IconData(0xe63c, fontFamily: 'iconfont')),
-              Icon(IconData(0xe635, fontFamily: 'iconfont')),
-              Icon(IconData(0xe633, fontFamily: 'iconfont'),color: Colors.red,),
-            ],
-          )),
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+//      body: Center(
+////        child: CanvasAnimateWidget(),
+//      child: Container(
+//        width: 200,
+//        height: 200,
+//        decoration: BoxDecoration(
+//          gradient: LinearGradient(
+//              begin: Alignment.topCenter,
+//              end: Alignment.bottomCenter,
+//              colors: [
+//                Color(0xFF95DAFF),
+//                Color(0xFFD29EFF),
+//              ]),
+//        ),
+//        child: CanvasAnimateWidget(),
+//      ),
+//      ),
+
+
+
+//    body: Icon(IconData(0xe658, fontFamily: 'iconfont')),
+
+
+
+    body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: 100),
+            child: Container(
+              width: 124,
+              height: 93,
+//              decoration: BoxDecoration(
+//                gradient: LinearGradient(
+//                    begin: Alignment.topCenter,
+//                    end: Alignment.bottomCenter,
+//                    colors: [
+//                      Color(0xFF95DAFF),
+//                      Color(0xFFD29EFF),
+//                    ]),
+//              ),
+              child: CustomPaint(
+                  size: Size(124,93),
+                  painter: MyPainter()),
+            ),
+          ),
+        )),
+
+
+
+//        body: CircleProgressBar(
+//            radius: 120.0,
+//            dotColor: Colors.pink,
+//            dotRadius: 18.0,
+//            shadowWidth: 2.0,
+//            progress: 0.4,
+//            progressChanged: (value) {
+//              setState(() {
+////    progress = value;
+//              });
+//            })
 
 //        Center(
 ////          child: CircularProgressIndicator(),
 //          child: Icon(IconData(0xe658, fontFamily: 'iconfont')),
 //        )
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
 
