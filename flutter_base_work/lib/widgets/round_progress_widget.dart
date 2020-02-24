@@ -1,6 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+import 'dart:math';
+import 'package:flutter/material.dart';
+
 class GradientCircularProgressIndicator extends StatelessWidget {
   GradientCircularProgressIndicator({
     this.stokeWidth = 2.0,
@@ -9,7 +12,7 @@ class GradientCircularProgressIndicator extends StatelessWidget {
     this.stops,
     this.strokeCapRound = false,
     this.backgroundColor = const Color(0xFFEEEEEE),
-    this.totalAngle = 5/4 * pi,
+    this.totalAngle = 2 * pi,
     this.value
   });
 

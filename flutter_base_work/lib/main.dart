@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_base_work/scoped_model/count_model.dart';
+import 'package:flutter_base_work/widgets/canvas_animation_progress_widget.dart';
 import 'package:flutter_base_work/widgets/custom_painter_widget.dart';
+import 'package:flutter_base_work/widgets/five_circle_widget.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 void main() => runApp(MyApp());
@@ -21,7 +23,10 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.cyan,
             primarySwatch: Colors.blue,
             brightness: Brightness.light,
-            accentColor: Colors.cyan),
+            accentColor: Colors.cyan,
+            primaryColorLight: Colors.red,
+            colorScheme: ColorScheme.dark(),
+        ),
         home: MyHomePage(title: '首页'),
         routes: {
           "home": (context) => MyHomePage(),
@@ -50,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //      body: Center(
 ////        child: CanvasAnimateWidget(),
 //      child: Container(
-//        width: 200,
-//        height: 200,
+//        width: 124,
+//        height: 93,
 //        decoration: BoxDecoration(
 //          gradient: LinearGradient(
 //              begin: Alignment.topCenter,
@@ -71,28 +76,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-    body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.only(top: 100),
-            child: Container(
-              width: 124,
-              height: 93,
-//              decoration: BoxDecoration(
-//                gradient: LinearGradient(
-//                    begin: Alignment.topCenter,
-//                    end: Alignment.bottomCenter,
-//                    colors: [
-//                      Color(0xFF95DAFF),
-//                      Color(0xFFD29EFF),
-//                    ]),
-//              ),
-              child: CustomPaint(
-                  size: Size(124,93),
-                  painter: MyPainter()),
-            ),
-          ),
-        )),
+//    body: SingleChildScrollView(
+//        child: Center(
+//          child: Padding(
+//            padding: EdgeInsets.only(top: 100),
+//            child: Container(
+//              width: 124,
+//              height: 93,
+////              decoration: BoxDecoration(
+////                gradient: LinearGradient(
+////                    begin: Alignment.topCenter,
+////                    end: Alignment.bottomCenter,
+////                    colors: [
+////                      Color(0xFF95DAFF),
+////                      Color(0xFFD29EFF),
+////                    ]),
+////              ),
+//              child: CustomPaint(
+//                  size: Size(124,93),
+//                  painter: MyPainter()),
+//            ),
+//          ),
+//        )),
 
 
 
@@ -107,6 +112,33 @@ class _MyHomePageState extends State<MyHomePage> {
 ////    progress = value;
 //              });
 //            })
+
+
+      body: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 100),
+              child: Container(
+                width: 124,
+                height: 93,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFF95DAFF),
+                      Color(0xFFD29EFF),
+                    ]),
+              ),
+                child: CustomPaint(
+                    size: Size(124,93),
+                    painter: FivePainter()),
+              ),
+            ),
+          )),
+
+
+
 
 //        Center(
 ////          child: CircularProgressIndicator(),

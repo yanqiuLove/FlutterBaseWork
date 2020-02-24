@@ -30,11 +30,9 @@ class _CanvasAnimateWidgetState extends State<CanvasAnimateWidget> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CustomPaint(
-        painter: DashBoardPainter(value: animation.value, maxValue: MAX_VALUE),
-        size: Size(124, 93),
-      ),
+    return CustomPaint(
+      painter: DashBoardPainter(value: animation.value, maxValue: MAX_VALUE),
+      size: Size(124, 112),
     );
   }
 
@@ -53,42 +51,44 @@ class DashBoardPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paint = new Paint();
     //1.绘制背景。
-    _drawBg(canvas, paint, size);
+//    _drawBg(canvas, paint, size);
     //2.绘制圆弧。
     _drawArc(canvas, paint, size);
   }
 
-  _drawBg(Canvas canvas, Paint paint, Size size) {
-    paint..color = Color.fromRGBO(255, 255, 255, 0)
-      ..style = PaintingStyle.fill;
-    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
-  }
+//  _drawBg(Canvas canvas, Paint paint, Size size) {
+//    paint..color = Color.fromRGBO(255, 255, 255, 0)
+//      ..style = PaintingStyle.fill;
+//    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
+//  }
 
   _drawArc(Canvas canvas, Paint paint, Size size) {
-    var padding = 10.0;
-    var width = size.width - 2*padding;
-    var height = size.height - padding;
+//    var padding = 10.0;
+//    var width = size.width - 2*padding;
+//    var height = size.height - padding;
+//    canvas.save();
+//    canvas.translate(padding, padding);
+
+    var width = size.width;
+    var height = size.height;
     canvas.save();
-    canvas.translate(padding, padding);
 
     //1.绘制灰色的外环。
-    paint..color = Colors.white10
+    paint..color = Colors.red
       ..strokeWidth = 0.0001
       ..style = PaintingStyle.stroke;
 //    canvas.drawArc(Rect.fromCircle(center: Offset(width/2, height/2), radius: min(height, width)/2), pi, pi, false, paint);
-
 //    canvas.drawArc(Rect.fromCircle(center: Offset(62, 56), radius: 56), pi, pi, false, paint);
     //2.根据比例绘制白色的外环。
-    paint..color = Colors.white;
+    paint..color = Colors.yellow;
     var faction = value / maxValue;
 //    canvas.drawArc(Rect.fromCircle(center: Offset(width/2, height/2), radius: min(height, width)/2), pi, pi, false, paint);
-    canvas.drawArc(Rect.fromCircle(center: Offset(62, 56), radius: 56), pi, pi * faction, false, paint);
-
+    canvas.drawArc(Rect.fromCircle(center: Offset(62, 86), radius: 56), pi, pi, false, paint);
     //3.绘制刻度的环。
     var arcX = 3.0;
     var arcWidth = 3.0;
     paint..strokeWidth = arcWidth..color = Colors.white10;
-    canvas.drawArc(Rect.fromCircle(center: Offset(width/2, height/2), radius: width/2 - arcX - arcWidth/2), pi, pi, false, paint);
+//    canvas.drawArc(Rect.fromCircle(center: Offset(width/2, height/2), radius: width/2 - arcX - arcWidth/2), pi, pi, false, paint);
 
     //4.绘制刻度的横线，已经跨过的部分是白色，否则为浅色。
     paint.strokeWidth = 2.0;
@@ -116,7 +116,7 @@ class DashBoardPainter extends CustomPainter {
         textDirection: TextDirection.ltr
     );
     textPainter.layout();
-    textPainter.paint(canvas, Offset(width/2 - textPainter.width/2, height/3));
+    textPainter.paint(canvas, Offset(width/2 - textPainter.width/2, 13));
     canvas.restore();
   }
 
