@@ -63,22 +63,22 @@ class FivePainter extends CustomPainter{
 
 
 
-    // 下边这个是每一个渐变  不是整体渐变
-//    for (var i = 0; i <= 34; i++) {
-//      canvas.save();
-////      paint.color = i <= threadHold ? Colors.cyan : Colors.white;
-//      paint.shader = SweepGradient(
-//        colors: [Color(0x80FFFFFF), Color(0xFF74DCF9)],
-////        colors: [Colors.yellow, Colors.cyan],
-////        startAngle: 5*pi/6,
-////        endAngle: currentProgress,
-//      ).createShader(rectTwo);
-//      canvas.translate(62, 28);
-//      canvas.rotate(4/3*pi*i/34);
-//      canvas.translate(-62, -28);
-//      canvas.drawLine(Offset(3, 28), Offset(3, 28), paint);
-//      canvas.restore();
-//    }
+//     下边这个是每一个渐变  不是整体渐变
+    for (var i = 0; i <= 34; i++) {
+      canvas.save();
+//      paint.color = i <= threadHold ? Colors.cyan : Colors.white;
+      paint.shader = SweepGradient(
+        colors: [Color(0x80FFFFFF), Color(0xFF74DCF9)],
+//        colors: [Colors.yellow, Colors.cyan],
+        startAngle: 5*pi/6,
+        endAngle: currentProgress,
+      ).createShader(rectTwo);
+      canvas.translate(62, 28);
+      canvas.rotate(4/3*pi*i/34);
+      canvas.translate(-62, -28);
+      canvas.drawLine(Offset(3, 28), Offset(3, 28), paint);
+      canvas.restore();
+    }
 
 
     
