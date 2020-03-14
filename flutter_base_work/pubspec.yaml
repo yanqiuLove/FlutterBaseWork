@@ -32,6 +32,9 @@ dependencies:
   # https://github.com/asjqkkkk/circle_list
   circle_list: ^0.0.6
 
+  # 画虚线圆 https://juejin.im/post/5cc54ae4f265da037b611a8e
+  path_drawing: ^0.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

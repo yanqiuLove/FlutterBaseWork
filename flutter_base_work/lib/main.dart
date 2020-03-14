@@ -6,6 +6,7 @@ import 'package:flutter_base_work/widgets/canvas_animation_progress_widget.dart'
 import 'package:flutter_base_work/widgets/custom_painter_widget.dart';
 import 'package:flutter_base_work/widgets/five_circle_widget.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:path_drawing/path_drawing.dart';
 
 void main() => runApp(MyApp());
 
@@ -114,28 +115,61 @@ class _MyHomePageState extends State<MyHomePage> {
 //            })
 
 
-      body: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.only(top: 100),
-              child: Container(
-                width: 124,
-                height: 93,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF95DAFF),
-                      Color(0xFFD29EFF),
-                    ]),
-              ),
-                child: CustomPaint(
-                    size: Size(124,93),
-                    painter: FivePainter()),
-              ),
-            ),
-          )),
+    // 渐变圆弧  和虚线单个渐变圆弧
+//      body: SingleChildScrollView(
+//          child: Center(
+//            child: Padding(
+//              padding: EdgeInsets.only(top: 100),
+//              child: Container(
+//                width: 124,
+//                height: 93,
+//              decoration: BoxDecoration(
+//                gradient: LinearGradient(
+//                    begin: Alignment.topCenter,
+//                    end: Alignment.bottomCenter,
+//                    colors: [
+//                      Color(0xFF95DAFF),
+//                      Color(0xFFD29EFF),
+//                    ]),
+//              ),
+//                child: CustomPaint(
+//                    size: Size(124,93),
+//                    painter: DashedArc(color: Colors.white)),
+//              ),
+//            ),
+//          )),
+    
+//    body: Container(
+////      color: Colors.yellow,
+//      child: Flex(
+//        direction: Axis.horizontal,
+//        children: <Widget>[
+//          Row(
+//            crossAxisAlignment: CrossAxisAlignment.start,
+//            children: <Widget>[
+//              Container(
+//                width: 20,
+//                height: 10,
+//                color: Colors.red,
+//              ),
+//              Container(
+//                width: 60,
+//                height: 10,
+//                color: Colors.cyan,
+//              ),
+//            ],
+//          ),
+//          Expanded(child: Text("哈哈哈哈哈发多付大恒科技发卡行发卡机和罚款和罚款交话费卡交话费卡读后感方大化工发回给")),
+//        ],
+//      ),
+//    ),
+
+    body: Container(
+      child: RaisedButton(
+        child: Text("你好哈哈哈", style: TextStyle(color: Colors.red),),
+      ),
+    )
+
 
 
 
