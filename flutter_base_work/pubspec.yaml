@@ -56,4 +56,8 @@ flutter:
       fonts:
         - asset: assets/fonts/iconfont.ttf
 
+    - family: NotoSansCJKsc-Regular
+      fonts:
+          - asset: assets/fonts/NotoSansCJKsc-Regular.otf
+
 

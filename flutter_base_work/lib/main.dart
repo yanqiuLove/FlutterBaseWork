@@ -16,6 +16,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   //创建顶层状态
   CountModel countModel = CountModel();
+
   @override
   Widget build(BuildContext context) {
     return ScopedModel<CountModel>(
@@ -49,7 +50,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   // 星体
   List celestialBodyIconfontList = [
     Icon(Icons.home),
@@ -79,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
     "Node",
     "Sout"
   ];
-
 
   // 星座
   List constellationNameList = [
@@ -131,7 +130,6 @@ class _MyHomePageState extends State<MyHomePage> {
   String xingzuo = "";
   String shuzi = "";
 
-
   int contents = 0;
   int lastNumber = 0;
 
@@ -139,13 +137,10 @@ class _MyHomePageState extends State<MyHomePage> {
   List constellationNumberList = [];
   List palaceNumberList = [];
 
-
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
 
     // 生成三组随机数 长度为12
 //    while(celestialBodyNumberList.length < 12) {
@@ -172,13 +167,11 @@ class _MyHomePageState extends State<MyHomePage> {
 //    print(constellationNumberList);
 //    print(palaceNumberList);
 
-
-  _starAnimation();
-
+    _starAnimation();
   }
 
   _starAnimation() async {
-    Timer.periodic( Duration( milliseconds: (2200/12).toInt() ), ( timer ) {
+    Timer.periodic(Duration(milliseconds: (2200 / 12).toInt()), (timer) {
       // 每隔 1 秒钟会调用一次，如果要结束调用
       int suijishu = Random.secure().nextInt(11);
       if (lastNumber == suijishu) {
@@ -186,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
         lastNumber = suijishu;
       }
       print(suijishu);
-      contents ++;
+      contents++;
       setState(() {
         shuzi = palaceList[suijishu];
         xingzuo = constellationNameList[suijishu];
@@ -286,6 +279,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           )),
 
+
+
 //      body: Center(
 //        child: Container(
 //          width: 300,
@@ -296,6 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //      ),
     );
   }
+
   Widget _getToolWidget() {
     return Container(
       child: Row(
@@ -434,3 +430,141 @@ class _MySecondPageState extends State<MySecondPage> {
     });
   }
 }
+
+
+//body: ListView(
+//children: <Widget>[
+//Container(
+//height: 60,
+//child: Text(
+//"字号是:20 字体是:NotoSansCJKsc-Regular 颜色是黑色",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w100),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w100",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w100),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w200",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w200),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w300",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w300),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w400",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w400),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w500",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w500),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w600",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w600),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w700",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w700),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w800",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w800),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.w900",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.w900),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.normal == w400",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.normal),
+//),
+//),
+//Container(
+//height: 50,
+//child: Text(
+//"FontWeight.bold == 700",
+//style: TextStyle(
+//color: Colors.black,
+//fontSize: 20,
+//fontFamily: "NotoSansCJKsc-Regular",
+//fontWeight: FontWeight.bold),
+//),
+//)
+//],
+//),
