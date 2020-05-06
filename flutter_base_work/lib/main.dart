@@ -254,29 +254,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // 渐变圆弧  和虚线单个渐变圆弧
       body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
-                width: 124,
-                height: 93,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFF95DAFF),
-                        Color(0xFFD29EFF),
-                      ]),
+          child: Padding(
+            padding: const EdgeInsets.all(58.0),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: 124,
+                  height: 93,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFF95DAFF),
+                          Color(0xFFD29EFF),
+                        ]),
+                  ),
+//                child: CustomPaint(
+//                    size: Size(124,93),
+//                    painter: DashedArc(color: Colors.white)),
+                child: CanvasAnimateWidget(),
                 ),
-                child: CustomPaint(
-                    size: Size(124,93),
-                    painter: DashedArc(color: Colors.white)),
-              ),
-              SizedBox(
-                height: 30,
-              ),
+                SizedBox(
+                  height: 30,
+                ),
 
-            ],
+              ],
+            ),
           )),
 
 
